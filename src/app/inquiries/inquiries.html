@@ -1,0 +1,65 @@
+
+<div class="head-container">
+
+    <div>
+        <mat-form-field appearance="outline"  class="w-100  custom-wide-field " style="color: white;" id="selectors">
+
+            <mat-label class="fw-bold text-primary fs-5" style="color: rgb(12, 7, 7);">
+                🔍 Select Inquiry Type
+            </mat-label>
+
+            <mat-select class="form-select-lg border-0" style="color: rgb(143, 31, 31);" >
+
+                <mat-option value="file" routerLink="fileEnquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">📁</span>
+                    <span class="fw-medium">Inquires:File Inquiry</span>
+                </mat-option>
+
+                <mat-option value="transaction" routerLink="transactionEnquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">💳</span>
+                    <span class="fw-medium">Inquires:Transaction Inquiry</span>
+                </mat-option>
+
+                <mat-option value="accounting" routerLink="accountingEntriesEnquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">📊</span>
+                    <span class="fw-medium">Inquires:Accounting Entries Inquiry</span>
+                </mat-option>
+
+                <mat-option value="handoff" routerLink="clearingHandoffInquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">🔄</span>
+                    <span class="fw-medium">Inquires:Clearing Handoff Inquiry</span>
+                </mat-option>
+
+                <mat-option value="response" routerLink="clearingResponseInquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">📥</span>
+                    <span class="fw-medium">Inquires:Clearing Response Inquiry</span>
+                </mat-option>
+
+                <mat-option value="customer" routerLink="customerResponseInquiry" class="py-3 border-bottom">
+                    <span class="fs-5 me-2">👤</span>
+                    <span class="fw-medium">Inquires:Customer Response Inquiry</span>
+                </mat-option>
+
+                <mat-option value="swift" routerLink="swiftGPI" class="py-3 bg-light">
+                    <span class="fs-5 me-2">🚀</span>
+                    <span class="fw-bold text-info">Inquires:Swift GPI</span>
+                </mat-option>
+
+            </mat-select>
+
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-slide-toggle [(ngModel)]="showSearchParameters">
+            <i>{{showSearchParameters?"Hide search Parameters":"Show search Parameters"}}</i>
+        </mat-slide-toggle>
+    </div>
+
+</div>
+
+<div class="content-container" *ngIf="showSearchParameters">
+    <router-outlet></router-outlet>
+</div>
+
+

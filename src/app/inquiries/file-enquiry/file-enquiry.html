@@ -1,0 +1,121 @@
+<p>file-enquiry works!</p>
+
+<div class="Search_Parameter_Container">
+
+    <form [formGroup]="fileEnquiryForm">
+
+        <div class="Showned_SP_Container">
+
+            <label for="File_Name">File Name</label>
+            <input type="text" placeholder="Enter file name" formControlName="File_Name">
+
+            <label for="Customer_File_ID">Customer File ID</label>
+            <input type="text" placeholder="Enter customer file id" formControlName="Customer_File_ID">
+
+            <label for="Initiating_Party_BIC">Initiating Party BIC</label>
+            <select name="Initiating_Party_BIC" placeholder="Search initiating party bic">
+                <option value="" selected disabled hidden>Search initiating party bic</option>
+                <option value="No result">No result</option>
+            </select>
+
+            <label for="Channel_Name">Channel Name</label>
+            <input type="text" placeholder="Enter channel name" formControlName="Channel_Name">
+
+            <label for="File_Receipt_from">File Receipt from</label>
+            <input type="date" placeholder="" formControlName="File_Receipt_from">
+
+            <label for="PSH_File_ID">PSH File ID</label>
+            <input type="text" placeholder="Enter psh file id" formControlName="PSH_File_ID">
+
+            <label for="File_Status">File Status</label>
+            <select name="File_Status" formControlName="File_Status">
+                <option value="" disabled hidden selected>Select</option>
+                <option value="File Status Success">File Status Success</option>
+                <option value="File Split Successful">File Split Successful</option>
+                <option value="File Split Failed">File Split Failed</option>
+                <option value="File Route">File Route</option>
+                <option value="File Routing Failed">File Routing Failed</option>
+                <option value="File Parshing Successful">File Parshing Successful</option>
+                <option value="File Processed">File Processed</option>
+                <option value="File Awaiting Rebulk">File Awaiting Rebulk</option>
+                <option value="File Debulked">File Debulked</option>
+                <option value="File Rejected">File Rejected</option>
+            </select>
+
+            <label for="File_Flow">File Flow</label>
+            <select name="File_Flow" id="" formControlName="File_Flow">
+                <option value="" selected disabled hidden>Select</option>
+                <option value="Inbound">Inbound</option>
+                <option value="Outbound">Outbound</option>
+            </select>
+
+            <label for="Customer_ID">Customer ID</label>
+            <input type="text" placeholder="Enter customer id" formControlName="Customer_ID">
+
+            <label for="Customer_Name">Customer Name</label>
+            <input type="text" placeholder="Enter customer name" formControlName="Customer_Name">
+
+            <label for="File_Format">File Format</label>
+            <select name="File_Format" formControlName="File_Format">
+                <option value="" disabled selected hidden>Select</option>
+                <option value="Pain 001.001.011">Pain 001.001.011</option>
+                <option value="SWIFT MT101">SWIFT MT101</option>
+                <option value="Pain 008.001.010">Pain 008.001.010</option>
+                <option value="SWIFT MT104">SWIFT MT104</option>
+                <option value="pacs.008.001.010">pacs.008.001.010</option>
+                <option value="pacs.009.001.010">pacs.009.001.010</option>
+                <option value="SWIFT MT103">SWIFT MT103</option>
+                <option value="SWIFT MT107">SWIFT MT107</option>
+                <option value="pacs.003.001.009">pacs.003.001.009</option>
+                <option value="NACHA 94">NACHA 94</option>
+                <option value="CPA005">CPA005</option>
+                <option value="REMT001">REMT001</option>
+                <option value="CAMT055">CAMT055</option>
+            </select>
+
+        </div>
+
+        <div class="Hided_SP_Container" *ngIf="toshowHided_SP_Container">
+
+            <label for="Request_Type">Request Type</label>
+            <select name="Request_Type" id="" formControlName="Request_Type">
+                <option value="" selected hidden disabled>Select</option>
+                <option value="API">API</option>
+                <option value="MQ">MQ</option>
+                <option value="File">File</option>
+            </select>
+
+            <label for="Transactions_Count_From">Transactions Count From</label>
+            <input type="text" placeholder="Enter transactions count from" formControlName="Transactions_Count_From">
+
+            <label for="Transactions_Count_To">Transactions Count To</label>
+            <input type="text" placeholder="Enter Transactions Count To" formControlName="Transactions_Count_To">
+
+            <label for="File_Amount_From">File Amount From</label>
+            <input type="text" placeholder="0.00" formControlName="File_Amount_From">
+
+            <label for="File_Amount_To">File Amount To</label>
+            <input type="text" placeholder="0.00" formControlName="File_Amount_To">
+
+            <label for="File_Type">File Type</label>
+            <select name="File_Type" id="" formControlName="File_Type">
+                <option value="" selected disabled hidden>Select</option>
+                <option value="Production">Production</option>
+                <option value="Test">Test</option>
+            </select>
+
+
+        </div>
+    </form>
+    <div class="buttons">
+
+        <div class="right-button">
+            <button (click)="HideContainerShowerBtn()">ADVANCED SEARCH {{toshowHided_SP_Container? '-' : '+' }}</button>
+        </div>
+
+        <div class="left-buttons">
+            <button (click)="searchBtn()"><i class="fi fi-tc-search">SEARCH</i></button>
+            <button (click)="resetBtn()"><i class="fi fi-tc-refresh">RESET</i></button>
+        </div>
+    </div>
+</div>

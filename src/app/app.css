@@ -1,0 +1,8 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("./assests/Gemini_Generated_Image_nuaigfnuaigfnuai.png"); */
+}

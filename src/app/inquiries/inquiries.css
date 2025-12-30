@@ -1,0 +1,49 @@
+/* This ensures the field stays wide and looks great */
+.custom-wide-field {
+  min-width: 400px;
+  /* It will never be smaller than 400 pixels */
+  /* background-color: transparent; */
+  border-radius: 8px;
+}
+
+/* This makes the actual dropdown panel (the part that pops out) match the width */
+::ng-deep .mat-mdc-select-panel {
+  min-width: 100% !important;
+  padding: 10px 0 !important;
+}
+
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.2px);
+  -webkit-backdrop-filter: blur(13.2px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  margin: 0.5em;
+}
+
+#selectors {
+  /* background: rgba(255, 255, 255, 0.31); */
+  /* border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(4.5px); */
+  /* border: 1px solid rgba(255, 255, 255, 0.56); */
+  margin: 0.5em;
+}
+
+.content-container {
+  color: rgba(172, 39, 83, 0.918);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(17.3px);
+  -webkit-backdrop-filter: blur(17.3px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  margin: 0.5em;
+}
